@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading Bar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="test.css">
+</head>
+<style>
+#bar {
+  width: 100%;
+  background-color: #c40d19;
+}
+
+#proses {
+  width: 0%;
+  height: 30px;
+  background-color: #4285f4;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+</style>
+<body>
+<center>
+<img src="LOGO-ITK-Terbaru.png" class="img-rounded" alt="logo itk" style="width:250px;height:200px;">
+</center>
+<div id="bar">
+  <div id="proses" >0%
+  </div>
+
+</div>
+<center>
+<br>
+<div class="button" onclick="move()">Go To ITK</div>
+</center>
+<script>
+function move() {
+  var elem = document.getElementById("proses");
+  var width = 0;
+  var id = setInterval(frame, 200);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      window.location.href = 'http://itk.ac.id/';
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      elem.innerHTML = width * 1  + '%';
+    }
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
